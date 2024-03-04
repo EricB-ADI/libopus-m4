@@ -8,10 +8,12 @@ SILK_DIR := silk
 OBJ_DIR := obj
 LIB_DIR := lib
 
-CFLAGS := -Wall -O2 -I $(SRC_DIR) -I $(CELT_DIR) -I $(SILK_DIR) -I include -I . -DUSE_ALLOCA -DHAVE_CONFIG_H
+CFLAGS := -Wall -Os
+CFLAGS += -I $(SRC_DIR) -I $(CELT_DIR) -I $(SILK_DIR) 
+CFLAGS += -I include -I . 
 CFLAGS += -Isilk/fixed
 CFLAGS += -mcpu=cortex-m4 -mthumb -mfloat-abi=hard
-
+CFLAGS += -DUSE_ALLOCA -DHAVE_CONFIG_H
 
 
 SRCS := $(wildcard $(SRC_DIR)/*.c) \
